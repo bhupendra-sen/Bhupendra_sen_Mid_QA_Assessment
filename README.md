@@ -194,23 +194,7 @@ The automation framework follows the Page Object Model design pattern.
 
 Page-specific locators and actions are separated from the test logic.
 
-Example structure:
 
-lambda-ecommerce-automation/
-│
-├── pages/
-│   ├── LoginPage.ts
-│   └── HomePage.ts
-│
-├── tests/
-│   └── ecommerce-checkout.spec.ts
-│
-├── test-results/
-│
-├── playwright.config.ts
-├── package.json
-├── tsconfig.json
-└── .gitignore
 Benefits of POM
 
 The Page Object Model provides:
@@ -364,28 +348,7 @@ Git and GitHub
 
 The repository contains the deliverables for all three assessment tasks.
 
-QA-Assessment/
-│
-├── Task-1-Manual-Testing/
-│   ├── Test-Plan
-│   ├── Test-Cases
-│   ├── Bug-Reports
-│   └── Test-Summary
-│
-├── Task-2-Postman-API-Testing/
-│   ├── ReqRes-Collection.json
-│   ├── ReqRes-QA-Environment.json
-│   └── API-Test-Report
-│
-├── Task-3-Playwright-Automation/
-│   ├── pages/
-│   ├── tests/
-│   ├── playwright.config.ts
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── README.md
-│
-└── README.md
+
 
 Adjust the folder/file names above to match the exact names in your GitHub repository.
 
