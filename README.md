@@ -25,15 +25,15 @@ Task	Area	Tool / Technology
 Task 1	Manual Testing	Manual Testing / Test Documentation
 Task 2	API Testing	Postman
 Task 3	UI Automation	Playwright + TypeScript
+
+
 2. Task 1 – Manual Testing
 2.1 Objective
 
 The objective of Task 1 was to perform manual testing of the assigned application and identify functional scenarios, validate expected behavior, and document defects where applicable.
-
 The testing focused on creating structured test scenarios and test cases covering positive, negative, boundary, and validation conditions.
 
 2.2 Testing Activities
-
 The following activities were performed:
 
 Analyzed application requirements and functionality
@@ -45,8 +45,17 @@ Recorded actual results
 Verified application behavior against expected results
 Identified and documented defects
 Performed regression verification where required
-2.3 Test Case Coverage
 
+2.3 Test Case Coverage
+The manual testing deliverables include test cases for:
+
+- Login functionality
+- Inventory page functionality
+- Add to Cart functionality
+- Checkout functionality
+- Multi-User Registration
+
+The test cases include positive, negative, validation, and relevant boundary scenarios where applicable.
 The manual testing covered relevant application functionality including:
 
 Functional validation
@@ -57,11 +66,38 @@ Boundary-value scenarios
 Required-field validation
 Error-message validation
 User interaction and workflow validation
+
 2.4 QA Approach
 
 The test cases were designed to provide meaningful coverage rather than only validating the happy path.
 
 Both valid and invalid inputs were considered to verify how the application behaves under different conditions.
+
+## 2.5 Deliverables
+
+The following manual testing deliverables are included in the repository:
+
+- Test cases for Login functionality
+- Test cases for Inventory page functionality
+- Test cases for Add to Cart functionality
+- Test cases for Checkout functionality
+- Test cases for Multi-User Registration
+- Bug Report documenting the identified QA observation
+- Test execution results and status where applicable
+
+# Registration Testing Scope
+
+- The provided SauceDemo reference application does not contain a user registration/multi-step registration workflow.
+- Therefore, the registration test cases were designed based on the assessment requirements rather than executed against the SauceDemo application.
+- Actual execution results are marked as **Not Executed**.
+
+#QA Observation – Checkout button allows users to proceed with an empty cart bug 
+
+- The assessment does not provide a specific requirement defining the expected behavior when a user attempts to proceed to checkout with an empty cart.
+- Based on standard e-commerce checkout behavior, users would generally be expected to have at least one product in the cart before initiating checkout.
+- During testing, the application allowed checkout to be initiated with an empty cart.
+- This behavior should be reviewed with the Product/Business team to confirm the intended behavior.
+- If empty-cart checkout is not a supported business flow, appropriate validation should be implemented to prevent the user from proceeding
 
 3. Task 2 – ReqRes API Testing Using Postman
 3.1 Overview
@@ -74,17 +110,13 @@ API: https://reqres.in/
 
 3.2 Environment Setup
 
-A Postman environment named:
-
-ReqRes QA Environment
-
-was created with reusable variables:
+A Postman environment named:ReqRes QA Environment was created with reusable variables:
 
 Variable	Purpose
-base_url	Base URL of the ReqRes API
-api_key	API key used for API access
-auth_token	Authentication token returned from the login request
-userid	Stores the ID returned when a user is created
+base_url = Base URL of the ReqRes API
+api_key  =	API key used for API access
+auth_token =	Authentication token returned from the login request
+userid	= Stores the ID returned when a user is created
 
 Using environment variables makes the collection reusable and avoids hard-coding values in individual requests.
 
@@ -286,6 +318,7 @@ Test reporting
 
 Failure artifacts are stored in the Playwright test-results/reporting output.
 
+
 8. Test Execution
 
 The automation can be executed using Playwright's test runner.
@@ -296,6 +329,8 @@ Run the assessment test in headed mode
 npx playwright test tests/ecommerce-checkout.spec.ts --project=chromium --headed
 View the HTML report
 npx playwright show-report
+
+
 9. Overall QA Approach
 
 The assessment demonstrates a layered QA approach:
@@ -348,8 +383,6 @@ Git and GitHub
 
 The repository contains the deliverables for all three assessment tasks.
 
-
-
 Adjust the folder/file names above to match the exact names in your GitHub repository.
 
 12. Conclusion
@@ -360,5 +393,3 @@ The work focuses on validating not only whether requests and UI actions execute 
 
 The combination of structured manual test cases, automated API assertions, and maintainable Playwright automation provides a foundation for scalable and reliable software testing.
 
-Prepared By: Bhupendra Sen
-Software Quality Assurance Engineer
